@@ -1,6 +1,5 @@
 package com.destroflyer.nordicworld.server;
 
-import com.jme3.bullet.control.BetterCharacterControl;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
@@ -16,7 +15,7 @@ public class ConnectedServerPlayer {
     private int playerId;
     private String login;
     private Node node;
-    private BetterCharacterControl betterCharacterControl;
+    private BestCharacterControl bestCharacterControl;
     private Vector3f walkDirection;
     private boolean isRunning;
     private Vector3f lastPosition;

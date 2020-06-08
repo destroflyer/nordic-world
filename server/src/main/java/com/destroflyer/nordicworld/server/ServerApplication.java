@@ -7,7 +7,6 @@ import com.destroflyer.nordicworld.shared.messages.*;
 import com.jme3.app.SimpleApplication;
 import com.jme3.asset.plugins.FileLocator;
 import com.jme3.bullet.BulletAppState;
-import com.jme3.bullet.control.BetterCharacterControl;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.network.*;
@@ -126,16 +125,16 @@ public class ServerApplication extends SimpleApplication {
         node.setLocalTranslation(new Vector3f(-40, 20, -45));
         rootNode.attachChild(node);
 
-        BetterCharacterControl betterCharacterControl = new BetterCharacterControl(0.4f, 2f, 60);
-        betterCharacterControl.setJumpForce(new Vector3f(0, 350, 0));
-        node.addControl(betterCharacterControl);
-        bulletAppState.getPhysicsSpace().add(betterCharacterControl);
+        BestCharacterControl bestCharacterControl = new BestCharacterControl(0.4f, 2f, 60);
+        bestCharacterControl.setJumpForce(new Vector3f(0, 350, 0));
+        node.addControl(bestCharacterControl);
+        bulletAppState.getPhysicsSpace().add(bestCharacterControl);
 
         ConnectedServerPlayer connectedServerPlayer = ConnectedServerPlayer.builder()
                 .playerId(playerId)
                 .login(login)
                 .node(node)
-                .betterCharacterControl(betterCharacterControl)
+                .bestCharacterControl(bestCharacterControl)
                 .walkDirection(new Vector3f())
                 .isRunning(false)
                 .lastPosition(new Vector3f())
@@ -147,7 +146,7 @@ public class ServerApplication extends SimpleApplication {
     private ConnectedServerPlayer onPlayerDisconnected(int clientId) {
         ConnectedServerPlayer connectedServerPlayer = connectedPlayers.remove(clientId);
         rootNode.detachChild(connectedServerPlayer.getNode());
-        bulletAppState.getPhysicsSpace().remove(connectedServerPlayer.getBetterCharacterControl());
+        bulletAppState.getPhysicsSpace().remove(connectedServerPlayer.getBestCharacterControl());
         return connectedServerPlayer;
     }
 
@@ -164,16 +163,16 @@ public class ServerApplication extends SimpleApplication {
     }
 
     private void updateEffectiveWalkDirection(ConnectedServerPlayer connectedServerPlayer) {
-        BetterCharacterControl betterCharacterControl = connectedServerPlayer.getBetterCharacterControl();
+        BestCharacterControl bestCharacterControl = connectedServerPlayer.getBestCharacterControl();
         Vector3f effectiveWalkDirection = connectedServerPlayer.getWalkDirection().mult(connectedServerPlayer.isRunning() ? 50 : 10);
-        betterCharacterControl.setViewDirection(effectiveWalkDirection);
-        betterCharacterControl.setWalkDirection(effectiveWalkDirection);
+        bestCharacterControl.setViewDirection(effectiveWalkDirection);
+        bestCharacterControl.setWalkDirection(effectiveWalkDirection);
     }
 
     private void jump(int clientId) {
         ConnectedServerPlayer connectedServerPlayer = connectedPlayers.get(clientId);
-        BetterCharacterControl betterCharacterControl = connectedServerPlayer.getBetterCharacterControl();
-        betterCharacterControl.jump();
+        BestCharacterControl bestCharacterControl = connectedServerPlayer.getBestCharacterControl();
+        bestCharacterControl.jump();
     }
 
     @Override

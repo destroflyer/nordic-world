@@ -250,7 +250,6 @@ public class ClientApplication extends SimpleApplication implements ActionListen
             }
             walkDirection.setY(0).normalizeLocal();
 
-
             if (isRunning && (walkDirection.length() > 0)) {
                 if (!hasRadialBlurFilter) {
                     filterPostProcessor.addFilter(radialBlurFilter);
