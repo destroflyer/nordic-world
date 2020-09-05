@@ -9,6 +9,7 @@ node {
             }
         } finally {
             step([$class: 'GitHubCommitStatusSetter'])
+            cleanWs()
         }
     }
 }
