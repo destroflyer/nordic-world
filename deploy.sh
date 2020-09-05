@@ -18,9 +18,8 @@ mvn clean install
 # sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
-ABC1="${CLIENT}"
+ABC1="${CLIENT}*"
 ABC2="$CLIENT*"
-echo "${CLIENT}*"
 echo "$ABC1"
 echo "$ABC2"
 echo "------"
