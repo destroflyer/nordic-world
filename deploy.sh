@@ -14,12 +14,13 @@ fi
 mvn clean install
 
 # Deploy (Server)
-mv server/target/server-1.0.0.jar "${SERVER}nordic-world.jar"
-sh "${SERVER}control.sh" restart
+# mv server/target/server-1.0.0.jar "${SERVER}nordic-world.jar"
+# sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
-rm -rfv "${CLIENT}*"
 echo "${CLIENT}*"
+rm -rfv "${CLIENT}*"
+echo "------"
 mv assets "${CLIENT}"
 mv client/target/libs "${CLIENT}"
 mv client/target/client-1.0.0.jar "${CLIENT}NordicWorld.jar"
