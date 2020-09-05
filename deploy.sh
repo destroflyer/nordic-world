@@ -18,9 +18,15 @@ mvn clean install
 # sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
-ABC="\"${CLIENT}*\""
-echo "${ABC}"
-rm -rf /var/www/destrostudios/apps/Nordic\ World/*
+ABC1="${CLIENT}"
+ABC2="$CLIENT*"
+echo "${CLIENT}*"
+echo "$ABC1"
+echo "$ABC2"
+echo "------"
+rm -rf "$ABC1"
+echo "------"
+rm -rf "$ABC2"
 echo "------"
 mv assets "${CLIENT}"
 mv client/target/libs "${CLIENT}"
