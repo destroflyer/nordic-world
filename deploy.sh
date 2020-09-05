@@ -18,7 +18,7 @@ mv server/target/server-1.0.0.jar "${SERVER}nordic-world.jar"
 sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
-rm -rf "${CLIENT}*"
+rm -rfv "${CLIENT}*"
 echo "${CLIENT}*"
 mv assets "${CLIENT}"
 mv client/target/libs "${CLIENT}"
