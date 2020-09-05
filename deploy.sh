@@ -7,15 +7,15 @@ CLIENT=$3
 # Checkout
 git clone https://github.com/destroflyer/nordic-world.git
 if [ -n "$VERSION" ]; then
-  git checkout $VERSION
+  git checkout "$VERSION"
 fi
 
 # Build
 mvn clean install
 
 # Deploy (Server)
-mv server/target/server-1.0.0.jar ${SERVER}nordic-world.jar
-sh ${SERVER}control.sh restart
+mv server/target/server-1.0.0.jar "${SERVER}nordic-world.jar"
+sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
 rm -rf "${CLIENT}*"
