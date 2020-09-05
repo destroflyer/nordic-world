@@ -18,8 +18,9 @@ mvn clean install
 # sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
-echo "${CLIENT}*"
-rm -vrf "${CLIENT}*"
+ABC="${CLIENT}*"
+echo "${A}"
+rm -vrf "${ABC}"
 echo "------"
 mv assets "${CLIENT}"
 mv client/target/libs "${CLIENT}"
