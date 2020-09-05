@@ -18,7 +18,7 @@ mvn clean install
 # sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
-ABC="${CLIENT}*"
+ABC="${CLIENT}"
 echo "${A}"
 rm -vrf "${ABC}"
 echo "------"
