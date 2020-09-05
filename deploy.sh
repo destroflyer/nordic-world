@@ -20,7 +20,7 @@ mvn clean install
 # Deploy (Client)
 ABC="\"${CLIENT}*\""
 echo "${ABC}"
-rm -rf "${ABC}"
+rm -rf /var/www/destrostudios/apps/Nordic\ World/*
 echo "------"
 mv assets "${CLIENT}"
 mv client/target/libs "${CLIENT}"
