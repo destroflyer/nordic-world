@@ -14,8 +14,7 @@ fi
 mvn clean install
 
 # Deploy (Server)
-mv server/target/server-1.0.0.jar "${SERVER}nordic-world.jar"
-chmod 744 "${SERVER}nordic-world.jar"
+mv server/target/server-1.0.0-jar-with-dependencies.jar "${SERVER}nordic-world.jar"
 sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
