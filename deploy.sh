@@ -18,8 +18,8 @@ mvn clean install
 # sh "${SERVER}control.sh" restart
 
 # Deploy (Client)
-ABC="${CLIENT}"
-echo "${A}"
+ABC="${CLIENT}*"
+echo "${ABC}"
 rm -vrf "${ABC}"
 echo "------"
 mv assets "${CLIENT}"
