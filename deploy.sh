@@ -19,7 +19,7 @@ mvn clean install
 
 # Deploy (Client)
 echo "${CLIENT}*"
-rm -rfv "${CLIENT}*"
+rm -vrf "${CLIENT}*"
 echo "------"
 mv assets "${CLIENT}"
 mv client/target/libs "${CLIENT}"
