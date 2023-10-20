@@ -11,7 +11,7 @@ if [ -n "$VERSION" ]; then
 fi
 
 # Build
-mvn clean install
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64;mvn clean install
 
 # Deploy (Client)
 rm -rf "${CLIENT}"*
@@ -23,4 +23,6 @@ curl https://destrostudios.com:8080/apps/4/updateFiles
 
 # Deploy (Server)
 mv server/target/server-1.0.0-jar-with-dependencies.jar "${SERVER}nordic-world.jar"
-sh "${SERVER}control.sh" restart
+mv ecosystem.config.js "${SERVER}"
+cd "${SERVER}"
+pm2 restart ecosystem.config.js
