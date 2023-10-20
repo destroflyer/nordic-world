@@ -4,7 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.destroflyer.nordicworld.shared.FileManager;
-import org.bouncycastle.openssl.PEMReader;
+import org.bouncycastle.openssl.PEMParser;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,8 +25,8 @@ public class AuthTokenService {
     private static PublicKey readPublicKey(String pathFilePath) {
         try {
             String publicKeyPath = FileManager.getFileContent(pathFilePath);
-            PEMReader pemReader = new PEMReader(new FileReader(publicKeyPath));
-            byte[] publicKeyBytes = pemReader.readPemObject().getContent();
+            PEMParser pemParser = new PEMParser(new FileReader(publicKeyPath));
+            byte[] publicKeyBytes = pemParser.readPemObject().getContent();
             return KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(publicKeyBytes));
         } catch (IOException | NoSuchAlgorithmException | InvalidKeySpecException ex) {
             ex.printStackTrace();

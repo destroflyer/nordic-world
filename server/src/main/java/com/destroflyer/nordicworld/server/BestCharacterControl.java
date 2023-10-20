@@ -13,7 +13,7 @@ public class BestCharacterControl extends BetterCharacterControl {
     public void prePhysicsTick(PhysicsSpace space, float tpf) {
         // Prevent bouncing off small slopes on the ground
         if (isOnGround()) {
-            velocity.setY(0);
+            // TODO: velocity.setY(0); (Decide if this is still needed with Minie)
         }
         super.prePhysicsTick(space, tpf);
     }
