@@ -32,7 +32,10 @@ import com.jme3.util.SkyFactory;
 import com.jme3.water.WaterFilter;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,6 +44,14 @@ public class ClientApplication extends SimpleApplication implements ActionListen
 
     public static void main(String[] args) {
         String authToken = args[0];
+
+        try {
+            FileOutputStream logFileOutputStream = new FileOutputStream("./log.txt");
+            System.setOut(new PrintStream(new MultipleOutputStream(System.out, logFileOutputStream)));
+            System.setErr(new PrintStream(new MultipleOutputStream(System.err, logFileOutputStream)));
+        } catch (FileNotFoundException ex) {
+            System.err.println("Error while accessing log file: " + ex.getMessage());
+        }
 
         Logger.getLogger("").setLevel(Level.SEVERE);
         Logger.getLogger(SkeletonControl.class.getName()).setLevel(Level.SEVERE);
