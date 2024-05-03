@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <version.bouncycastle>1.76</version.bouncycastle>
+        <version.bouncycastle>1.78</version.bouncycastle>
         <version.java-jwt>4.4.0</version.java-jwt>
         <version.jdom>2.0.6.1</version.jdom>
         <version.jme>3.6.1-stable</version.jme>
