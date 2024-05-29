@@ -45,11 +45,11 @@ pipeline {
                 }
 
                 // Client
-                sh 'rm -rf "$CLIENT/*"'
-                sh 'mv assets "$CLIENT"'
-                sh 'mv client/target/libs "$CLIENT"'
-                sh 'mv client/target/client-1.0.0.jar "$CLIENT/NordicWorld.jar"'
-                sh 'echo "./assets/" > "$CLIENT/assets.ini"'
+                sh 'rm -rf \\"$CLIENT/*\\"'
+                sh 'mv assets \\"$CLIENT\\"'
+                sh 'mv client/target/libs \\"$CLIENT\\"'
+                sh 'mv client/target/client-1.0.0.jar \\"$CLIENT/NordicWorld.jar\\"'
+                sh 'echo ./assets/ > \\"$CLIENT/assets.ini\\"'
                 sh 'curl -X POST https://destrostudios.com:8080/apps/4/updateFiles'
             }
         }
