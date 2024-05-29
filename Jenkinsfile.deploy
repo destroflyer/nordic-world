@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 // Server
-                sh 'mv server/target docker'
+                sh 'mv server/target assets docker'
                 dir ('docker') {
                     withCredentials([
                         string(credentialsId: 'destrostudios-auth-private-key-passphrase', variable: 'AUTH_PRIVATE_KEY_PASSPHRASE'),
@@ -46,7 +46,7 @@ pipeline {
 
                 // Client
                 sh 'rm -rf \"$CLIENT/*\"'
-                sh 'mv assets \"$CLIENT\"'
+                sh 'mv docker/assets \"$CLIENT\"'
                 sh 'mv client/target/libs \"$CLIENT\"'
                 sh 'mv client/target/client-1.0.0.jar \"$CLIENT/NordicWorld.jar\"'
                 sh 'echo ./assets/ > \"$CLIENT/assets.ini\"'
