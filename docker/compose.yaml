@@ -1,0 +1,10 @@
+name: nordic-world
+services:
+  app:
+    build:
+      dockerfile: app.Dockerfile
+    volumes:
+      - /var/www/destrostudios/apps/Nordic World/assets > /home/assets
+    ports:
+      - "6143:6143"
+    restart: always
