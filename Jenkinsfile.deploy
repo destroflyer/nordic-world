@@ -50,7 +50,7 @@ pipeline {
                 sh 'mv client/target/libs "$CLIENT"'
                 sh 'mv client/target/client-1.0.0.jar "$CLIENT/NordicWorld.jar"'
                 sh 'mv docker/assets "$CLIENT"'
-                sh 'echo ./assets/ > "$CLIENT/assets.ini"'
+                sh 'echo -n ./assets/ > "$CLIENT/assets.ini"'
                 sh 'curl -X POST https://destrostudios.com:8080/apps/4/updateFiles'
             }
         }
