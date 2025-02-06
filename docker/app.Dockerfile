@@ -1,5 +1,5 @@
-# Native bullet requires focal instead of alpine
-FROM eclipse-temurin:17-jre-focal
+# Native bullet requires noble instead of alpine
+FROM eclipse-temurin:22-jre-noble
 WORKDIR /home
 COPY target/server-1.0.0-jar-with-dependencies.jar public.pem ./
 COPY assets assets

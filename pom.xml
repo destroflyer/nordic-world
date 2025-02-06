@@ -15,18 +15,16 @@
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <version.bouncycastle>1.76</version.bouncycastle>
-        <version.java-jwt>4.4.0</version.java-jwt>
+        <version.bouncycastle>1.80</version.bouncycastle>
+        <version.java-jwt>4.5.0</version.java-jwt>
         <version.jdom>2.0.6.1</version.jdom>
         <version.jme>3.6.1-stable</version.jme>
-        <version.lombok>1.18.30</version.lombok>
-        <version.maven-assembly-plugin>3.6.0</version.maven-assembly-plugin>
-        <version.maven-compiler-plugin>3.11.0</version.maven-compiler-plugin>
-        <version.maven-dependency-plugin>3.2.0</version.maven-dependency-plugin>
-        <version.maven-jar-plugin>3.2.0</version.maven-jar-plugin>
-        <version.minie>7.7.0</version.minie>
+        <version.lombok>1.18.36</version.lombok>
+        <version.maven-assembly-plugin>3.7.1</version.maven-assembly-plugin>
+        <version.maven-compiler-plugin>3.13.0</version.maven-compiler-plugin>
+        <version.maven-dependency-plugin>3.8.1</version.maven-dependency-plugin>
+        <version.maven-jar-plugin>3.4.2</version.maven-jar-plugin>
+        <version.minie>8.2.0</version.minie>
         <version.nordicworld>1.0.0</version.nordicworld>
     </properties>
     <dependencyManagement>
@@ -84,12 +82,12 @@
             <!--Bouncycastle-->
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk15to18</artifactId>
+                <artifactId>bcprov-jdk18on</artifactId>
                 <version>${version.bouncycastle}</version>
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcpkix-jdk15to18</artifactId>
+                <artifactId>bcpkix-jdk18on</artifactId>
                 <version>${version.bouncycastle}</version>
             </dependency>
             <!--Lombok-->
@@ -108,8 +106,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version.maven-compiler-plugin}</version>
                 <configuration>
-                    <source>17</source>
-                    <target>17</target>
+                    <source>22</source>
+                    <target>22</target>
                 </configuration>
             </plugin>
         </plugins>
