@@ -15,7 +15,7 @@
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.bouncycastle>1.80</version.bouncycastle>
+        <version.bouncycastle>1.84</version.bouncycastle>
         <version.java-jwt>4.5.0</version.java-jwt>
         <version.jdom>2.0.6.1</version.jdom>
         <version.jme>3.6.1-stable</version.jme>
